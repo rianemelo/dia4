@@ -1,0 +1,48 @@
+<!-- ### BARRA NEVAGAÇÃO ### -->
+<nav ng-controller="HeaderController as vm" class="navbar navbar-expand-lg navbar-dark bg-primary py-2 px-5 mb-3">
+    <i class="material-icons md-36 mr-1" aria-hidden="true">shopping_cart</i> <!-- é o ícone -->
+    <a class="navbar-brand">ListaCompras App</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+            aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link c-pointer" ng-click="vm.go('/home')" ng-class="{'active': vm.logado}"> 
+                    Home
+                </a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link c-pointer" ng-click="vm.serviceF()" ng-class="{'active': vm.logado}"> 
+                    Service ?
+                </a>
+            </li> -->
+        </ul>
+        <ul class="navbar-nav mr-0">
+            <li class="nav-item">
+                <!-- <a class="nav-link c-pointer" ng-click="vm.ativo = !vm.ativo" ng-class="{'active': vm.ativo}"> -->
+                <!-- ng-class configura uma classe CSS de um elemento do HTML de modo dinâmico aqui, se o vm.ativo
+                    é true, active é acrecsentado no class="nav-link c-pointer", se é false, não é acrescentado-->
+                <!-- <a class="nav-link c-pointer" ng-click="vm.ativo = !vm.ativo" 
+                    ng-style="vm.ativo ? {'color':'#fff'} : {}"> -->
+                    <a class="nav-link c-pointer" ng-click="">
+                    Logout
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link c-pointer" ng-click="vm.go('/login')"
+                   ng-class="{'active': !vm.logado && !vm.register}"> <!--  -->
+                    Login <!-- fica aceso(ativo) se não tiver logado nem registrado -->
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link c-pointer" ng-click="vm.go('/register')"
+                   ng-class="{'active': vm.register}">
+                    Register
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
